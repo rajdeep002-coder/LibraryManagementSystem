@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- JDBC Driver -->
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+
+        <!-- Database URL -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/liibrary_db?useSSL=false&amp;serverTimezone=UTC
+        </property>
+
+
+        <!-- DB Username -->
+        <property name="hibernate.connection.username">
+            root
+        </property>
+
+
+        <!-- DB Password -->
+        <property name="hibernate.connection.password">
+            1234
+        </property>
+
+
+        <!-- Dialect (Hibernate 6 correct dialect) -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQL8Dialect
+        </property>
+
+
+        <!-- Show SQL -->
+        <property name="hibernate.show_sql">
+            true
+        </property>
+
+
+        <!-- Auto table update -->
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+
+        <!-- Entity mappings -->
+        <mapping class="entity.User"/>
+        <mapping class="entity.Book"/>
+        <mapping class="entity.Issue"/>
+
+
+    </session-factory>
+
+</hibernate-configuration>
